@@ -390,7 +390,7 @@ public class DocBuilder {
 
               if(changeVersion == null){
                   LOG.info("change Version is NULL, defaulting to 0");
-                  changeVersion = 0l;
+                  changeVersion = "0";
               }
 
               firstElement.put("changeVersion", Long.valueOf(Long.parseLong(changeVersion)));
