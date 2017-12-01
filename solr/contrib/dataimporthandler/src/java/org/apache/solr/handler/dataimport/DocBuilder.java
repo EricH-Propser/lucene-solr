@@ -385,7 +385,14 @@ public class DocBuilder {
                   LOG.info("Skipping delta import as previous version and current version are the same");
                   allPks.clear();
               }
-              LOG.info("current change version" + currentVersion);
+              LOG.info("current change version: " + currentVersion);
+              LOG.info("changeVersion: " + changeVersion);
+
+              if(changeVersion == null){
+                  LOG.info("change Version is NULL, defaulting to 0");
+                  changeVersion = 0l;
+              }
+
               firstElement.put("changeVersion", Long.valueOf(Long.parseLong(changeVersion)));
               this.persistedProperties.put(this.changeControlDetection, currentVersion);
           }
